@@ -28,17 +28,17 @@ function createWindow() {
 	let electronSwitchesDefaults = ["autoplay-policy", "no-user-gesture-required"];
 	app.commandLine.appendSwitch(...new Set(electronSwitchesDefaults, config.electronSwitches));
 	let electronOptionsDefaults = {
-		width: 800,
-		height: 600,
-		x: 0,
+		width: Math.round(electron.screen.getPrimaryDisplay().size.width / 1.2),
+		height: electron.screen.getPrimaryDisplay().size.height,
+		x: electron.screen.getPrimaryDisplay().size.width / 2,
 		y: 0,
-		darkTheme: true,
+		darkTheme: false,
 		webPreferences: {
 			contextIsolation: true,
 			nodeIntegration: false,
 			zoomFactor: config.zoom
 		},
-		backgroundColor: "#000000"
+		backgroundColor: "#00f034"
 	};
 
 	// DEPRECATED: "kioskmode" backwards compatibility, to be removed

@@ -9,7 +9,7 @@
 Module.register("clock", {
 	// Module config defaults.
 	defaults: {
-		displayType: "digital", // options: digital, analog, both
+		displayType: "both", // options: digital, analog, both
 
 		timeFormat: config.timeFormat,
 		timezone: null,
@@ -17,10 +17,10 @@ Module.register("clock", {
 		displaySeconds: true,
 		showPeriod: true,
 		showPeriodUpper: false,
-		clockBold: false,
+		clockBold: true,
 		showDate: true,
 		showTime: true,
-		showWeek: false,
+		showWeek: true,
 		dateFormat: "dddd, LL",
 		sendNotifications: false,
 
@@ -31,10 +31,10 @@ Module.register("clock", {
 		analogShowDate: "top", // OBSOLETE, can be replaced with analogPlacement and showTime, options: false, 'top', or 'bottom'
 		secondsColor: "#888888",
 
-		showSunTimes: false,
+		showSunTimes: true,
 		showMoonTimes: false,
-		lat: 47.630539,
-		lon: -122.344147
+		lat: 37.3541,
+		lon: -121.9552
 	},
 	// Define required scripts.
 	getScripts: function () {
@@ -119,7 +119,7 @@ Module.register("clock", {
 		const weekWrapper = document.createElement("div");
 
 		// Style Wrappers
-		dateWrapper.className = "date normal medium";
+		dateWrapper.className = "date bright large light";
 		timeWrapper.className = "time bright large light";
 		secondsWrapper.className = "seconds dimmed";
 		sunWrapper.className = "sun dimmed small";

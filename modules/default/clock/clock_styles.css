@@ -85,6 +85,7 @@
 .module.clock .sun,
 .module.clock .moon {
   display: flex;
+  font-size: 80px;
 }
 
 .module.clock .sun > *,
